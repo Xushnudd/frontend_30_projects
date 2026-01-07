@@ -1,2 +1,2 @@
-# frontend_30days
-This project will help me improve my programming skills in 30 days.
+# frontend_30_projects
+These 30 projects were created to challenge myself in frontend
