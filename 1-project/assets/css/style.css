@@ -2,6 +2,12 @@ body {
     margin: 0;
     padding: 0;
 }
+img {
+    width: 50%;
+}
+* {
+    box-sizing: border-box;
+}
 .header {
     width: 100%;
 }
@@ -35,7 +41,78 @@ body {
 .banner__body {
     position: absolute;
     top: 0;
-    height: 99%;
+    width: 100%;
+    height: 100%;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
+}
+.banner__container {
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.banner__title {
+    width: 60%;
+    margin-top: 40%;
+    font-size: 220%;
+}
+.banner__caption {
+    margin-top: 25px;
+    width: 80%;
+    word-wrap: break-word;
+}
+.banner__button {
+    margin: 35% 10%;
+    width: 200px;
+    height: 50px;
+    font-size: 120%;
+    background-color: rgb(223, 150, 99);
+    color: white;
+    border: none;
+}
+.banner__button:active {
+    background-color: rgb(224, 131, 64);
+}
+.banner__foot {
+    text-align: center;
+}
+
+.about {
+    background-color: rgb(245, 228, 231);
+    padding: 3%;
+    padding-top: 50px;
+}
+.about__title {
+    font-size: 150%;
+}
+.about__caption {
+    line-height: 150%;
+}
+.about__button {
+    width: 170px;
+    height: 50px;
+    border: 2px solid rgb(223, 150, 99);
+    color: rgb(223, 150, 99);
+    font-size: 105%;
+    margin-top: 20px;
+}
+.about__images {
+    margin-top: 150px;
+}
+.about__image {
+    width: 100%;
+    margin: 1px 0px;
+}
+.about__values {
+    padding-top: 100px;
+}
+.about__values__title {
+    font-size: 150%;
+}
+.about__values__quotes {
+}
+.about__values__quote {
+    margin: 70px 0px;
+    line-height: 150%;
 }
