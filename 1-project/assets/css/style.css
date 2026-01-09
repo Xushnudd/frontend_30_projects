@@ -164,3 +164,37 @@ img {
 .teamwork__author {
     text-align: right;
 }
+
+.positions {
+    padding: 50px 3%;
+    background-color: rgb(247, 238, 239);
+}
+.position__title {
+    text-align: center;
+    font-size: 150%;
+}
+.position__cards {
+}
+.position__card {
+    border: 1px solid rgb(200, 200, 200);
+    padding: 50px;
+    margin: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.position__card__title {
+    font-size: 200%;
+}
+.position__card__button {
+    border: 5px solid rgb(247, 238, 239);
+    font-size: 105%;
+    width: 110px;
+    background-color: rgb(247, 238, 239);
+    color: rgb(223, 150, 99);
+}
+.position__card__button:focus {
+    border: 5px solid rgb(197, 197, 230);
+    border-radius: 10px;
+}
