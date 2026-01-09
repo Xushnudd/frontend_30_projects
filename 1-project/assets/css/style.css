@@ -198,3 +198,39 @@ img {
     border: 5px solid rgb(197, 197, 230);
     border-radius: 10px;
 }
+
+.asistant {
+    padding: 100px 5%;
+    background-color: #eee;
+}
+.asistant__title {
+    font-weight: 400;
+    text-align: center;
+}
+.asistant__caption {
+    text-align: center;
+}
+.asistant__cards {
+    line-height: 250%;
+    font-size: 110%;
+}
+.asistant__card {
+    margin: 60px 0px;
+}
+.asistant__card__title {
+    font-weight: bold;
+    font-size: 120%;
+}
+.asistant__foot {
+    display: flex;
+    justify-content: center;
+}
+.asistant__button {
+    width: 200px;
+    height: 50px;
+    background-color: rgb(223, 150, 99);
+    border: none;
+}
+.asistant__button:focus {
+    background-color: rgb(226, 131, 63);
+}
