@@ -300,6 +300,12 @@ img {
     text-align: center;
     padding: 1%;
 }
+.testimonials__reklama__button {
+    width: 150px;
+    height: 50px;
+    border: rgb(209, 92, 56) solid 3px;
+    margin: 5%;
+}
 .testimonials__footer {
     display: flex;
     flex-direction: column;
@@ -353,3 +359,6 @@ img {
     flex-direction: column;
     gap: 5px;
 }
+
+/* Adaptation  */
+
