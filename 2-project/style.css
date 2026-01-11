@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+body {
+    font-family: 'Roboto';
+    background-color: #131417;
+}
+p {
+    text-shadow: 0 0 7px rgba(255,255,255,1), 0 0 5px rgba(255,255,255,.7);
+    margin-right: 5px;
+}
+.container {
+    color: whitesmoke;
+    font-size: 1.5rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+.mask {
+    width: 300px;
+    height: 30px;
+    overflow: hidden;
+}
+.animation {
+    animation: text-animation 10s infinite;
+}
+
+@keyframes text-animation {
+    0% {margin-top: 2px;}
+    10% {margin-top: 2px;}
+    20% {margin-top: -27px;}
+    30% {margin-top: -27px;}
+    40% {margin-top: -56px;}
+    50% {margin-top: -56px;}
+    60% {margin-top: -56px;}
+    70% {margin-top: -27px;}
+    80% {margin-top: -27px;}
+    90% {margin-top: 2px;}
+    100% {margin-top: 2px;}
+}
