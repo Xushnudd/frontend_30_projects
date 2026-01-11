@@ -54,16 +54,19 @@ img {
 }
 .banner__title {
     width: 60%;
-    margin-top: 40%;
+    margin-top: 150px;
     font-size: 220%;
+    text-align: center;
 }
 .banner__caption {
-    margin-top: 25px;
-    width: 80%;
+    margin-top: 30px;
+    width: 90%;
     word-wrap: break-word;
+    text-align: center;
+    line-height: 150%;
 }
 .banner__button {
-    margin: 35% 10%;
+    margin: 100px 10%;
     width: 200px;
     height: 50px;
     font-size: 120%;
@@ -109,8 +112,6 @@ img {
 }
 .about__values__title {
     font-size: 150%;
-}
-.about__values__quotes {
 }
 .about__values__quote {
     margin: 70px 0px;
@@ -172,8 +173,6 @@ img {
 .position__title {
     text-align: center;
     font-size: 150%;
-}
-.position__cards {
 }
 .position__card {
     border: 1px solid rgb(200, 200, 200);
@@ -317,7 +316,9 @@ img {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap;
 }
+
 .testimonials__footer__card>i {
     font-size: 500%;
 }
@@ -362,3 +363,84 @@ img {
 
 /* Adaptation  */
 
+@media (width >= 550px) {
+    .about__images__cont {
+        display: flex;
+        justify-content: space-between;
+    }
+    .about__image.img1 {
+        width: 69%;
+    }
+    .about__image.img2 {
+        width: 30%;
+    }
+}
+
+@media (width > 575px) {
+    .about__values__quotes {
+        margin: 0px 20%;
+    }
+    .infos {
+        margin-top: 50px;
+    }
+    .info {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0px;
+        gap: 10px;
+    }
+    .info__item.icon {
+        width: 30%;
+    }
+    .info__item {
+        width: 60%;
+    }
+
+    .position__cards {
+        margin: 0px 10%;
+    }
+
+    .testimonials__footer__cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    .testimonials__footer__card {
+        width: 200px;
+    }
+}
+
+@media (width >= 990px) {
+    .about__values__quotes {
+        margin: 0px 10%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .about__values__title {
+        font-size: 300%;
+    }
+    .about__values__quote {
+        width: 45%;
+    }
+}
+
+@media (width >= 1300px) {
+    .about__images {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 5%;
+    }
+    .about__image {
+        width: 49%;
+        margin: 4px;
+    }
+    .about__images__cont {
+        width: 100%;
+    }
+}
