@@ -4,3 +4,9 @@ for (let i = 0; i < info_item.length; i++) {
         info_item[i].classList.add("icon")
     }
 }
+
+const menu = document.querySelector(".menu")
+
+function bar_menu() {
+    menu.classList.toggle("show")
+}
