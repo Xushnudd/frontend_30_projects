@@ -21,12 +21,18 @@ img {
     font-size: 250%;
     color: white;
 }
-.logo {
-}
 .links {
     display: none;
 }
-.burger-menu {
+.link {
+    text-decoration: none;
+    color: white;
+    font-size: xx-large;
+}
+.link:hover {
+    border-bottom: 3px solid rgb(231, 112, 27);
+    color: rgb(231, 112, 27);
+    transition: 0.5s;
 }
 .banner {
     width: 100%;
@@ -474,6 +480,12 @@ img {
 }
 
 @media (width >= 1300px) {
+    .links {
+        display: inline-block;
+    }
+    .burger-menu {
+        display: none;
+    }
     .about__images {
         display: flex;
         justify-content: center;
@@ -486,5 +498,12 @@ img {
     }
     .about__images__cont {
         width: 100%;
+    }
+}
+
+@media (width >= 1400px) {
+    .main>div {
+        width: 1400px;
+        margin: auto;
     }
 }
