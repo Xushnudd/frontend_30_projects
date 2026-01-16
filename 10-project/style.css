@@ -1,0 +1,40 @@
+body {
+    margin: 0px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(81, 29, 129);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+b {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50px;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 10px;
+    transition: 0.8s;
+}
+b:hover {
+    width: 400px;
+    transition: 0.8s;
+}
+
+input {
+    border: none;
+    width: 100%;
+    font-size: 130%;
+}
+input:focus-visible {
+    outline: none;
+}
+i {
+    font-size: 120%;
+    cursor: pointer;
+}
