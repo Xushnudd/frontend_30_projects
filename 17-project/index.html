@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg</title>
+    <style>
+        body {
+            margin: 0%;
+            width: 100vw;
+            height: 100vh;
+            background-color: blueviolet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .text {
+            cursor: pointer;
+        }
+        .text:hover rect {
+            stroke: red;
+        }
+        .text:hover text {
+            fill: red;
+        }
+    </style>
+</head>
+<body>
+    <svg width="100" height="100">
+        <g class="text">
+            <rect x="0" y="0" width="100" height="100" fill="white" rx="10" stroke="black" stroke-width="5" />
+            <text x="5" y="60" font-size="34" fill="black">TEXT</text>
+        </g>
+    </svg>
+</body>
+</html>
