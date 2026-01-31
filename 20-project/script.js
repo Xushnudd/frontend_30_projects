@@ -13,11 +13,6 @@ function close_a_door() {
 }
 
 function mdoor() {
-    if (a%2 == 0) {
-        open_a_door()
-    }
-    else {
-        close_a_door()
-    }
+    a%2 == 0 ? open_a_door() : close_a_door()
     a+=1
 }
