@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traffic light</title>
+    <style>
+        .container {
+            border: 1px solid black;
+            display: inline-block;
+            background-color: rgb(56, 56, 56);
+            border-radius: 10px;
+        }
+        .container>div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            border-radius: 50%;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script>
+        const con = document.querySelectorAll(".container>div")
+        const color = ['red', 'yellow', 'green']
+        con.forEach((el, i)=>{
+            el.style.background = color[i]
+        })
+    </script>
+</body>
+</html>
