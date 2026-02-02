@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
             background-color: rgb(56, 56, 56);
             border-radius: 10px;
         }
+
         .container>div {
             width: 100px;
             height: 100px;
@@ -20,6 +22,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div></div>
@@ -27,11 +30,17 @@
         <div></div>
     </div>
     <script>
-        const con = document.querySelectorAll(".container>div")
+        const lights = document.querySelectorAll(".container>div")
         const color = ['red', 'yellow', 'green']
-        con.forEach((el, i)=>{
-            el.style.background = color[i]
-        })
+        let active = 0
+        function changeLight() {
+            lights.forEach(light => light.style.background = "#111")
+            lights[active].style.background = color[active]
+            active = (active + 1) % 3
+        }
+        changeLight()
+        setInterval(changeLight, 3000)
     </script>
 </body>
+
 </html>
