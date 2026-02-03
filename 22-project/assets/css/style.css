@@ -137,3 +137,17 @@ footer {
 .footer__btn-prev:hover, .footer__btn-next:hover {
     background-color: rgb(192, 192, 192);
 }
+
+@media (width > 990px) {
+    main {
+        max-width: 1580px;
+        margin: auto;
+        justify-content: center;
+    }
+    section {
+        width: 65%;
+    }
+    aside {
+        width: 30%;
+    }
+}
