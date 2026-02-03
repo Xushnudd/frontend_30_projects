@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+}
+
+.bg-black {
+    background-color: black;
+    color: white;
+    padding: 3px 8px;
+}
+.bg-eee {
+    background-color: #eee;
+}
+.date {
+    color: gray;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    font-family: sans-serif;
+    background-color: #eee;
+}
+header {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header__title {
+    text-transform: uppercase;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card, .profile, .posts, .tags {
+    max-width: 990px;
+    border: 1px solid #ccc;
+    margin: 20px;
+    box-shadow: 0 0 10px #c2c2c2;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.card__img, .profile__photo, .posts__title, .tags__title {
+    width: 100%;
+}
+.card__caption, .profile__caption, .tags__body {
+    padding: 10px 15px;
+    background-color: white;
+}
+.card__title {
+    text-transform: uppercase;
+}
+.card__subtitle {
+    font-size: 1.1rem;
+}
+.card__footer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card__footer>button {
+    width: 150px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+}
+.card__footer>button:hover {
+    background-color: #c2c2c2;
+}
+
+.posts__title, .tags__title {
+    padding: 0 15px;
+}
+.post__item {
+    margin-top: 1px;
+    padding: 10px 15px;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.post__item>img {
+    width: 50px;
+    height: 50px;
+}
+.post__title {
+    margin: 0;
+    font-weight: normal;
+}
+.post__subtitle {
+    font-size: 90%;
+}
+
+.tags__body {
+    overflow-wrap: break-word;
+}
+.tag {
+    margin: 3px;
+    padding: 1px 5px;
+    font-size: 90%;
+    display: inline-block;
+}
+
+footer {
+    width: 100%;
+    height: 20vh;
+    background-color: rgb(107, 107, 107);
+    padding: 30px 20px;
+}
+.footer__btn-prev {
+    width: 120px;
+    height: 40px;
+    background-color: rgb(77, 77, 77);
+    color: gray;
+    font-size: 110%;
+    border: none;
+}
+.footer__btn-next {
+    width: 100px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    font-size: 110%;
+    border: none;
+}
+.footer__btn-prev:hover, .footer__btn-next:hover {
+    background-color: rgb(192, 192, 192);
+}
