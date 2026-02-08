@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            color: white;
+            margin: 0px;
+        }
+        body, header, main, nav, div, img {
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+        body {
+            background-color: rgb(16, 34, 58);
+        }
+
+        .header {
+            width: 100%;
+            background-color: rgb(3, 34, 77);
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 999;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .icon {
+            width: 65%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+        }
+        .profile-picture {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        .profile_name {
+            font-size: 200%;
+        }
+
+        .bar, .arrow-left {
+            padding: 10px;
+            font-size: 200%;
+            border-radius: 10px;
+        }
+        .bar:active, .arrow-left:active {
+            background-color: rgb(75, 89, 109);
+        }
+
+        .chats_list {
+            background-color: rgb(22, 33, 48);
+            margin-top: 0px;
+        }
+
+        .people {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+        }
+        .people:active {
+            background-color: rgb(75, 89, 109);
+        }
+
+        .people_profile-photo {
+            width: 60px;
+            border-radius: 50%;
+        }
+        .people_caption {
+            width: 100%;
+            height: 100%;
+            border-bottom: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .people_name {
+            font-size: 150%;
+        }
+        .people_status {
+            font-size: 80%;
+        }
+
+        .chat {
+            display: none;
+            width: 100%;
+        }
+        .chat_main {
+            padding: 5px;
+            padding-bottom: 70px;
+        }
+        #body {
+            background-color: rgb(42, 75, 117);
+        }
+        .chat_message-acceptance {
+            margin: 5px;
+            padding: 15px;
+            width: 70%;
+            background-color: rgb(19, 36, 58);
+            border: none;
+            border-radius: 30px;
+            border-bottom-left-radius: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .chat_message-send {
+            margin: 5px;
+            padding: 15px;
+            margin-left: auto;
+            width: 70%;
+            background-color: rgb(19, 36, 58);
+            border: none;
+            border-radius: 30px;
+            border-bottom-right-radius: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .chat_input {
+            background-color: rgb(19, 36, 58);
+            width: 100%;
+            height: 60px;
+            border-top: #797878 solid 5px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            z-index: 998;
+        }
+        .text {
+            width: 80%;
+            height: 40px;
+            background-color: rgb(41, 59, 82);
+            font-size: 200%;
+            border: none;
+            border-radius: 20px;
+        }
+        .send {
+            width: 40px;
+            height: 40px;
+            background-color: rgb(0, 162, 255);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .send:active {
+            background-color: rgb(91, 194, 253);
+        }
+
+        #chat-owner {
+            display: none;
+        }
+    </style>
+</head>
+<body id="body">
+    <div>
+        <header class="header">
+            <nav class="nav" id="nav">
+                <div class="icon">
+                    <img src="https://images.pexels.com/photos/14653174/pexels-photo-14653174.jpeg" alt="Profil rasmi" class="profile-picture">
+                    <div class="profile_name">My name</div>
+                </div>
+                <div class="menu">
+                    <i class="fa-solid fa-bars bar"></i>
+                </div>
+            </nav>
+            <div class="nav" id="chat-owner">
+            </div>
+        </header>
+        <main class="main">
+            <div class="chats_list" id="chats_list"></div>
+            <div class="chat" id="chat">
+                <div class="chat_main" id="chat_main">
+                </div>
+                <div class="chat_input">
+                    <input type="text" id="text" class="text">
+                    <div class="send" id="send" onclick="sendm()">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </div>
+                </div>
+            </div>
+            <script>
+                const chats_list = document.getElementById("chats_list")
+                const nav = document.getElementById("nav")
+                const chat_owner = document.getElementById("chat-owner")
+                const people_chat = document.getElementById("chat")
+                const people_chat_main = document.getElementById("chat_main")
+                const text = document.getElementById("text")
+                const send = document.getElementById("send")
+
+                let people_lists = [
+                    "Xurshida",
+                    "Bexruz",
+                    "Laura",
+                    "Mantis",
+                    "Adam",
+                    "Piter",
+                    "Anna",
+                    "Ariana",
+                    "Maks",
+                    "Steen",
+                    "Maria",
+                    "Jonibek",
+                    "Sarvinoz",
+                    "Nurbek",
+                    "Atxam",
+                    "Bekzod"
+                ];
+
+                let people_status = [
+                    "Online",
+                    "Offline"
+                ]
+
+                let people_profile_photo = [
+                    "https://scontent.fbhk1-3.fna.fbcdn.net/v/t39.30808-6/480241876_122191221968152571_743907110820157766_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=N_PpwFUoHPwQ7kNvwFwPRA2&_nc_oc=AdmPf77i8o9V49B3QnbZ4EOG1nSGXgAKC9gCh3DUrUECM0lpavodXV6erBs81Cr4oew&_nc_zt=23&_nc_ht=scontent.fbhk1-3.fna&_nc_gid=-jNO_Xw75OXLtvLd_BSsIw&oh=00_Afuud-ALj0exW0xDEZR3wiz2fC9yOPmQyW4wOf6L6_JB0A&oe=698E9373",
+                    "https://scontent.fbhk1-1.fna.fbcdn.net/v/t39.30808-6/480271493_122191222172152571_6763362658404174448_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=IEHkUH8456QQ7kNvwFau3mi&_nc_oc=AdlapgQbZnO_3ZO-6hpIiyNbipNOQ25ePInXeunnlP7tpG0a_-74ieao-XWF4FY9Bvc&_nc_zt=23&_nc_ht=scontent.fbhk1-1.fna&_nc_gid=Xm4C3v1DqgG2B1VBLwZtcg&oh=00_AfuY7Zug73E66pkIe0Ch03RsRYpiLejD70t0_k6bqjF7jg&oe=698E9CC3",
+                    "https://scontent.fbhk1-1.fna.fbcdn.net/v/t39.30808-6/480104143_122191222208152571_6534643313022041006_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=zLmbuRmYVg8Q7kNvwFjbHnt&_nc_oc=AdmHXnYF6naYQqJk5ImjbXv5FRgXNR71LWzWB-t1GbMXSoQ-_BX83qyXKlSvMRddOlo&_nc_zt=23&_nc_ht=scontent.fbhk1-1.fna&_nc_gid=bpxCzsxojRLig537PM-5lA&oh=00_AftTZer7SYN5WCnUfx36-vV0EtH7_IuBnz_VEL5gAgxMlQ&oe=698E91D4"
+                ]
+
+                people_lists.forEach((first_name, i)=>{
+                    chats_list.innerHTML += `<div class="people" id="people" onclick="chat(${i})">
+                        <img src="${people_profile_photo[i%3]}" alt="Profil rasmi" class="people_profile-photo">
+                        <div class="people_caption">
+                            <span class="people_name">${first_name}</span>
+                            <span class="people_status">${people_status[i%2]}</span>
+                        </div>
+                    </div>`
+                })
+
+                let nomi = ""
+                function chat(i) {
+                    nav.style.display = "none"
+                    chats_list.style.display = "none"
+                    chat_owner.style.display = "flex"
+                    chat_owner.innerHTML = `
+                        <div class="icon">
+                            <img src="${people_profile_photo[i%3]}" alt="Profil rasmi" class="profile-picture">
+                            <div class="profile_name">${people_lists[i]}</div>
+                            <span class="people_status">${people_status[i%2]}</span>
+                        </div>
+                        <div class="menu">
+                            <i class="fa-solid fa-arrow-left arrow-left" onclick="back()"></i>
+                        </div>
+                    `
+                    people_chat.style.display = "block"
+                    nomi = people_lists[i]
+                }
+
+                let show = true
+
+                function back() {
+                    if (show == true) {
+                        nav.style.display = "flex"
+                        chat_owner.style.display = "none"
+                        chats_list.style.display = "block"
+                        people_chat.style.display = "none"
+                    }
+                }
+
+                text.addEventListener("keydown", function(e) {
+                    if (e.key === "Enter") {
+                        e.preventDefault(); // Enter pastga tushmasligi uchun
+                        sendm();
+                    }
+                });
+
+                function scrollToBottom() {
+                    window.scrollTo(0, document.body.scrollHeight);
+                }
+
+                function sendm() {
+                    people_chat_main.innerHTML += `<div class="chat_message-send">${text.value}</div>`
+                    if (text.value == "Salom" || text.value == "salom") {
+                        people_chat_main.innerHTML += `<div class="chat_message-acceptance">Salom, Yaxshimisiz?</div>`
+                    }
+                    else if (text.value == "Yaxshi" || text.value == "yaxshi") {
+                        people_chat_main.innerHTML += `<div class="chat_message-acceptance">Ismingiz nima?</div>`
+                    }
+                    else if (text.value == "Ismingiz nima?" || text.value == "Isming nima?") {
+                        people_chat_main.innerHTML += `<div class="chat_message-acceptance">Mening ismim ${nomi}</div>`
+                    }
+                    else {
+                        people_chat_main.innerHTML += `<div class="chat_message-acceptance">Nima deganingizga tushunmadim</div>`
+                    }
+                    text.value = ""
+                    scrollToBottom();
+                }
+            </script>
+        </main>
+        <footer class="footer"></footer>
+    </div>
+</body>
+</html>
