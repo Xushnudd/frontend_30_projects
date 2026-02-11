@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            color: white;
+        }
+        .text-chocolate {
+            color: chocolate;
+        }
+        .container {
+            width: 100%;
+            margin: 5px 5px 0px 5px;
+            background-color: #666;
+            display: flex;
+            justify-content: space-around;
+        }
+        .item {
+            
+            margin: 70px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .coffee {
+            display: flex;
+            flex-direction: column;
+            margin: 5px;
+        }
+        .img {
+            width: 180px;
+            height: 90px;
+        }
+        .coffee_info {
+            width: 150px;
+        }
+        h3 {
+            margin-top: 0px;
+        }
+        .inp {
+            width: 150px;
+            background-color: #333;
+        }
+        #contact {
+            width: 315px;
+            height: 50px;
+            margin-top: 5px;
+            background-color: #333;
+        }
+        button {
+            background-color: chocolate;
+            width: 100px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+        }
+        footer {
+            width: 100%;
+            background-color: #333;
+            margin-left: 5px;
+        }
+        .nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 5px;
+        }
+        .nav_item {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .nav_item>div {
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <div class="coffee">
+                <img src="./image.png" alt="coffee" class="img">
+                <b class="text-chocolate">Read more about me</b>
+            </div>
+            <div class="coffee_info">
+                <h3>Get In Touch</h3>
+                Phone: +99812345678<br>
+                Email: Johne@Example.com<br>
+                <div class="icons">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-solid fa-d"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <form action="" method="get">
+                <label for="contact"><h3>Contact Form</h3></label>
+                <br>
+                <input type="text" name="Name" placeholder="Name" class="inp">
+                <input type="email" name="email" placeholder="Email" class="inp">
+                <br>
+                <textarea name="text" id="contact"></textarea><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="nav">
+            <div class="nav_item">
+                &copy; 2019 Author | Design by <span class="text-chocolate">freehtml</span> | All rights Reserved.
+            </div>
+            <div class="nav_item">
+                <div><i>Mastercard</i></div>
+                <div><i>Paypal</i></div>
+                <div><i>Visa</i></div>
+                <div>FedEx</div>
+                <div><b>.DHL...</b></div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
